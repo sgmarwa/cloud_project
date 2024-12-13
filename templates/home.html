@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Mr+Dafoe&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+    <title>home</title>
+
+</head>
+<body>
+    <div class="container-menu">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li class="nav-link">
+                    <a href="/register">Home</a>
+                </li>
+                <li class="nav-link services">
+                    <a href="#">Services 
+                        <span class="material-icons dropdown-icon">
+                             
+                        </span>
+                    </a>
+                    <ul class="drop-down">
+                        <li><a href="/add_recipe">Add recipe</a></li>
+                    </ul>
+                    
+                </li>
+                
+                <li class="nav-link">
+                    <a href="#">About</a>
+                </li>
+                <li class="nav-link">
+                    <a href="#">Contact</a>
+                </li>
+                <li class="nav-link user-profile">
+                    <a href="#">
+                        <img src="static/4305692.jpeg" alt="User Profile" class="profile-img">
+                    </a>
+                </li>
+            </ul>
+            
+
+        </nav>
+    </div>
+ 
+       
+     <div class="container">
+        <div class="card__container">
+        
+              {% for recipe in recipes %}
+           <article class="card__article">
+  
+               
+                  <img src="{{ recipe['image_url'] }}" alt="Recipe Image" class="card__img">
+                  <div class="card__data">
+                      <h2 class="card__title">{{ recipe.name_recipe}}</h2>
+                      <h2>{{ recipe.nb_likes }}</h2>
+                      <a href="/recette/{{ recipe.recipe_id }}" class="card__button">See ingredients</a>
+
+                  </div>
+           </article>
+              {% endfor %}
+        </div>
+    </div>
+   </body>
+</html>
+

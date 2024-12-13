@@ -1,0 +1,5 @@
+python -m venv venv
+.\venv\Scripts\activate
+pip install flask mysql-connector-python bcrypt boto3 werkzeug python-dotenv flask-cors
+pip install Flask-Session
+python -m flask --app .\app.py run
